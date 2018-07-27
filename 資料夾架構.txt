@@ -1,0 +1,16 @@
+prgject
+	mvc_config
+	model
+		smarty
+			Smarty.class.php
+	view
+		cache
+		configs
+		templates
+			css
+			js
+			images
+			page...
+		templates_c
+ 	controller
+		smarty_config.php

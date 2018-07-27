@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Doing</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery-3.3.1.js"></script>
+	<script src="js/script.js"></script>
+	<style>
+	body{font-family:Helvetica,Verdana,Arial,sans-serif;}
+	img{width:60px;}
+
+	.c1{background-color:#f2f0f0;}/*第一階顏色*/
+	.c2{background-color:#676666}/*第二階顏色*/
+	.cred{background-color:red;}
+
+	.color1{background-color:#f2f0f0;}
+	.color2{background-color:#ffe5e5;}
+	
+	/*主色調*/
+	.color3{background-color:lightblue;}
+	.color4{background-color:orange;}
+	.color5{background-color:lightgreen;}
+	.color6{background-color:#f2f0f0;}
+	/*字體大小*/
+	.font_size_1{font-size:1rem;}
+	.font_size_1_5{font-size:1.5rem;}
+	.font_size_2{font-size:2rem;}
+	.font_size_4{font-size:4rem;}
+
+	.flexbox{display:flex;flex-wrap:wrap;justify-content:center;}
+
+	.padding_0_1{padding:0 1rem;}
+	.padding_0_2{padding:0 2rem;}
+	.padding_1_0{padding:1rem 0;}
+	.padding_1_2{padding:1rem 2rem;}
+	.padding_0_1_1_0{padding:0 1rem 1rem 0;}
+
+	.move_updown{background-color:#f2f0f0;}
+	.move_updown:hover .iover{animation-name:move_up2;animation-duration:1.5s;border-bottom:2px solid #111;}
+	.move_updown:hover .iover:hover{background-color:#fff;}
+
+	#topsubs{vertical-align:middle;}
+	#topsubs a{display:block;margin-left:2rem;text-align:center;font-size:1.5rem;color:#111;border-bottom:2px solid #111;padding:0 0.5rem;}
+
+	#indexheader{margin:0 1rem;}
+	#indexheader>section:nth-of-type(1){width:40%;padding:0.5rem 2rem;}
+	#indexheader>section:nth-of-type(1)>div:nth-of-type(1){width:20%;}
+	#indexheader>section:nth-of-type(1)>div:nth-of-type(2){margin-left:0.5rem;}
+	#indexheader>section:nth-of-type(1)>div:nth-of-type(2)>span:nth-of-type(1){font-size:4rem;}
+	#indexheader>section:nth-of-type(1)>div:nth-of-type(2)>span:nth-of-type(2){font-size:2rem;line-height:5.5rem;}
+
+	#indexheader>section:nth-of-type(2){width:60%;line-height:3.2rem;}
+	#indexheader>section:nth-of-type(3){width:100%;}
+	#indexheader>section:nth-of-type(3) div{max-width:300px;min-width:200px;text-align:left;}
+	#indexheader>section:nth-of-type(3)	div>section:nth-of-type(1){height:40%;}
+	#indexheader>section:nth-of-type(3)	div>section:nth-of-type(1)>p:nth-of-type(1){font-size:2rem;font-weight:bold;}
+	#indexheader>section:nth-of-type(3)	div>section:nth-of-type(1)>p:nth-of-type(2){font-size:1rem;}
+	#indexheader>section:nth-of-type(3)	div>section:nth-of-type(2) ul>li>a{color:#111;display:block;line-height:2rem;letter-spacing:0.4px;}
+	
+	#indexheader>section:nth-of-type(3)	div:nth-of-type(1)>section:nth-of-type(2) ul>li>a:hover{border-bottom:1.9px solid lightblue;}
+	#indexheader>section:nth-of-type(3) div:nth-of-type(2)>section:nth-of-type(2) ul>li>a:hover{border-bottom:1.9px solid orange;}
+	#indexheader>section:nth-of-type(3) div:nth-of-type(3)>section:nth-of-type(2) ul>li>a:hover{border-bottom:1.9px solid lightgreen;}
+	#indexheader>section:nth-of-type(3) div:nth-of-type(4)>section:nth-of-type(2) ul>li>a:hover{border-bottom:1.9px solid #f2f0f0;}
+	/*自訂螢幕*/
+	@media screen and (min-width:1280px) and (max-width:1510px) {
+		#moblie_test{width:2rem;height:2rem;background-color:#111;}
+	}	
+	/*適用橫向平板螢幕*/
+	@media screen and (min-width:801px) and (max-width:1279px){
+		#moblie_test{width:2rem;height:2rem;background-color:lightgreen;}
+
+	}
+	/*自訂螢幕*/
+	@media screen and (min-width:401px) and (max-width:800px){
+		#moblie_test{width:2rem;height:2rem;background-color:lightblue;}
+
+		.move_updown:hover .iover{animation-name:move_up1;animation-duration:1.5s;}
+
+		#topsubs a{font-size:1rem;}
+
+		#indexheader>section:nth-of-type(1),#indexheader>section:nth-of-type(2),#indexheader>section:nth-of-type(3){width:100%;}
+		#indexheader>section:nth-of-type(2){line-height:1.5rem;}
+
+		#indexheader>section:nth-of-type(3)	div{padding:0 0 2rem 0;}
+		#indexheader>section:nth-of-type(3)	div section{width:100%;padding:0.2rem 0;}
+		#indexheader>section:nth-of-type(3)	div>section:nth-of-type(1)>p:nth-of-type(1){font-size:1.2rem;}
+		#indexheader>section:nth-of-type(3)	div>section:nth-of-type(1)>p:nth-of-type(2){font-size:0.8rem;padding:0.2rem 0;}
+		#indexheader>section:nth-of-type(3)	div>section:nth-of-type(2) ul>li>a{line-height:1.5rem;letter-spacing:0.24px;padding-left:1.5rem;}
+	}
+	/*適用手機與直向平板螢幕*/
+	@media screen and (max-width:400px){
+		#moblie_test{width:2rem;height:2rem;background-color:pink;}
+
+		.move_updown:hover .iover{animation-name:move_up1;animation-duration:1.5s;}
+
+		#topsubs a{font-size:1rem;}
+
+		#indexheader>section:nth-of-type(1),#indexheader>section:nth-of-type(2),#indexheader>section:nth-of-type(3){width:100%;}
+		#indexheader>section:nth-of-type(1)>div:nth-of-type(2){width:100%;}
+		#indexheader>section:nth-of-type(1)>div:nth-of-type(2)>span:nth-of-type(1){font-size:3rem;}
+		#indexheader>section:nth-of-type(1)>div:nth-of-type(2)>span:nth-of-type(2){font-size:1.5rem;line-height:4rem;}
+
+		#indexheader>section:nth-of-type(2){line-height:1.5rem;}
+
+		#indexheader>section:nth-of-type(3)	div{padding:0 0 2rem 0;}
+		#indexheader>section:nth-of-type(3)	div section{width:100%;padding:0.2rem 0;}
+		#indexheader>section:nth-of-type(3)	div>section:nth-of-type(1)>p:nth-of-type(1){font-size:1.2rem;}
+		#indexheader>section:nth-of-type(3)	div>section:nth-of-type(1)>p:nth-of-type(2){font-size:0.8rem;padding:0.2rem 0;}
+		#indexheader>section:nth-of-type(3)	div>section:nth-of-type(2) ul>li>a{line-height:1.5rem;letter-spacing:0.24px;padding-left:1.5rem;}
+	}
+	
+	@keyframes move_up1{
+		0%		{background-color:#f2f0f0;height:3rem;}
+		50%		{background-color:#f2f0f0;height:0px;}
+	  	100%	{background-color:#FFF;height:3rem;}
+	}
+	
+	@keyframes move_up2{
+		0%		{background-color:#f2f0f0;height:6.5rem;}
+		50%		{background-color:#f2f0f0;height:0px;}
+	  	100%	{background-color:#FFF;height:6.5rem;}
+	}
+
+	
+	</style>
+</head>
+<body>
+	<div id="moblie_test">moblie</div>
+
+
+	<header id="indexheader" class="flexbox">
+		<section class="flexbox color2">
+			<div>
+				<img src="images/dragon.png" alt="網站圖示">
+			</div>
+			<div class="flexbox">
+				<span>K</span>
+				<span>eep learning</span>
+			</div>
+		</section>
+		<section>
+			<ul id="topsubs" class="flexbox color1">
+				<li class="move_updown"><a href="#" class="iover">首頁<br>Home</a></li>
+				<li class="move_updown"><a href="#" class="iover">關於我<br>About</a></li>
+				<li class="move_updown"><a href="#" class="iover">作品集<br>Collection</a></li>
+			</ul>
+		</section>
+		<section class="flexbox padding_1_0">
+			<div class="flexbox padding_1_2">
+				<section class="color3 padding_0_1_1_0">
+					<p>前端</p>
+					<p class="padding_1_0">Front End</p>
+				</section>
+				<section class="padding_0_2">
+					<ul>
+						<li><a href="#">Html</a></li>
+						<li><a href="#">Css</a></li>
+						<li><a href="#">JavaScript</a></li>
+						<li><a href="#">JQuery</a></li>
+						<li><a href="#">Vue.js</a></li>
+						<li><a href="#">Python</a></li>
+					</ul>
+				</section>
+			</div>
+			<div class="flexbox padding_1_2">
+				<section class="color4 padding_0_1_1_0">
+					<p>後端</p>
+					<p class="padding_1_0">Back End</p>
+				</section>
+				<section class="padding_0_2">
+					<ul>
+						<li><a href="#">PHP</a></li>
+						<li><a href="#">Smarty</a></li>
+						<li><a href="#">Django</a></li>
+					</ul>
+				</section>
+			</div>
+			<div class="flexbox padding_1_2">
+				<section class="color5 padding_0_1_1_0">
+					<p>其他</p>
+					<p class="padding_1_0">Other</p>
+				</section>
+				<section class="padding_0_2">
+					<ul>
+						<li><a href="#">網路資源</a></li>
+						<li><a href="#">學習進度</a></li>
+						<li><a href="#">綜合範例</a></li>
+						<li><a href="#">開發</a></li>
+						<li><a href="#">模組化</a></li>
+					</ul>
+				</section>
+			</div>
+			<div class="flexbox padding_1_2">
+				<section class="color6 padding_0_1_1_0">
+					<p>各版</p>
+					<p class="padding_1_0">Template</p>
+				</section>
+				<section class="padding_0_2">
+					<ul>
+						<li><a href="#">工作版</a></li>
+						<li><a href="#">理財版</a></li>
+						<li><a href="#">自修版</a></li>
+						<li><a href="#">未來板</a></li>
+						<li><a href="#">文章集</a></li>
+					</ul>
+				</section>
+			</div>
+		</section>
+		<section>
+			<div>日曆</div>
+			<div>學習進度</div>
+		</section>
+		<section>
+			<div>A版-使用grid排版</div>
+			<div>B版</div>
+			<div>C版</div>
+			<div>D版</div>
+		</section>
+	</header>
+	<main id="indexmain">
+		
+	</main>
+	<footer id="indexfooter">
+		
+	</footer>
+</body>
+</html>
